@@ -21,9 +21,6 @@ def create_app():
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
 
-    # The reason we import this is not because we're actually going to use anything. It is because
-    # we need to make sure that we load  models.py file and that it runs and defines these classes before we initialize or create our database.
-    # So we import the models file so that it defines these classes for us
     from .models import User, Note
     with app.app_context():
         db.create_all()
