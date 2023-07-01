@@ -121,13 +121,3 @@ def create_checkout_session():
         return str(e)
 
     return redirect(checkout_session.url, code=303)
-# above
-# it is going to take in some data from a post
-# request, it's going to load it as a Jason object or a Python dictionary we're then going to access the note ID attribute,
-# which again, it's right here. What we'll do then is we'll say, note doc query dot gets we'll look for the note
-# that has that ID check. If it exists, first of all, if it does exist, then, um, of course we can delete it. If it doesn't, we don't need
-# to delete it. And then what we'll do is we'll say, well, if we own this notes with the user who is signed in,
-# does actually own this note, because we don't want to let users who are assigned in delete other people's notes, right? Uh, then we will
-# delete the notes. And then what we'll do is we'll return an empty response. Now we just
-# need to do this because we do need to return something from these views. We're not returning HTML here. We're just returning an
-# empty response that is either saying, Hey, you know, it was successful or it didn't work
