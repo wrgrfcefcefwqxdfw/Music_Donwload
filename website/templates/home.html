@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<br>
+<h1>This is the penis page. Welcome {{ user.first_name }}</h1>
+<hr style="background-color:blue; height:5px">
+<br>
+<div class="row">
+    {% for note in user.notes %}
+    <div class="col-sm-4">
+        <div class="card mb-3" style="background-color: yellow;">
+            <div class="card-body">
+                <button type="button" class="close" onClick="deleteNote({{ note.id }})">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <p class="card-text">{{ note.data }}</p>
+            </div>
+        </div>
+    </div>
+    {% if loop.index % 3 == 0 %}
+        <div class="w-100"></div>
+    {% endif %}
+    {% endfor %}
+</div>
+<form method="POST">
+    <textarea name="note" id="note" class="form-control"></textarea>
+    <br>
+    <div align="center">
+        <button type="submit" class="btn btn-primary">Add Note</button>
+    </div>
+</form>
+{% endblock %}

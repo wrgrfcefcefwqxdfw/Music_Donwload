@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Downloader{% endblock %}
+
+{% block content %}
+<body>
+<div class="subcontainer" style="margin-top:100px">
+<form method="POST">
+    <h3 align="center">Video Link</h3>
+        <div class="form-group">
+            <label for="vid">Video Link</label>
+            <input type="text" class="form-control" id="vid" name="vid" placeholder="Enter YouTube link">
+        </div>
+        <br>
+        <button style="margin: 0 auto; display: block;" type="submit" class="btn btn-primary">Submit</button>
+    <br>
+</form>
+</div>
+
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <iframe src="{{video_link}}" frameborder="0" width="1000" height="600" scrolling="no" allowfullscreen></iframe>
+</div>
+
+</body>
+{% endblock %}
